@@ -32,8 +32,8 @@ function gotStream(stream) {
 }
 
 function changeVideo(){
-    if(video.srcObject){
-        video.srcObject.getVideoTracks().forEach(track => {
+    if(stream){
+        stream.getVideoTracks().forEach(track => {
             track.stop();
         });
     }
