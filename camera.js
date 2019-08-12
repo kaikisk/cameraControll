@@ -33,7 +33,7 @@ function save(){
         var keyName = document.getElementById("key").value; // キー名を取ってくる
         var ts = db.transaction(["store1"], "readwrite");
         var store = ts.objectStore("store1");
-        var request = store.put({mykey: keyName, mayvalue: blob});
+        var request = store.put({mykey: keyName, mayvalue: tempImage});
         request.onsuccess = function(){
             console.log("success put img");
         }
