@@ -1,4 +1,5 @@
 var db;
+var i = 1;
 var request = indexedDB.open('hhsw');
 request.onsuccess = function (event){
     db = event.target.result;
@@ -9,9 +10,8 @@ request.onsuccess = function (event){
       if(event.target.result == null) {
         return;
       }
-      var i = 0;
-      i++;
       var image = document.getElementById("image-" + i);
+      i++;
       var cursor = event.target.result;
       var data = cursor.value;
       console.log("key："  + cursor.key +  "  value：" + data.myvalue);
