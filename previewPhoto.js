@@ -1,6 +1,6 @@
 var db;
 var i = 1;
-var request = indexedDB.open('hhsw');
+var request = indexedDB.open('camera');
 request.onsuccess = function (event){
     db = event.target.result;
     var ts = db.transaction(["store1"], "readonly");
