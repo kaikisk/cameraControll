@@ -3,6 +3,12 @@ var tempImage;
 var video = document.getElementById("myVideo"); // 適当にvideoタグのオブジェクトを取得
 var constrains = { video: true, audio: false }; // 映像・音声を取得するかの設定
 
+navigator.mediaDevices.enumerateDevices()
+.then(devices => {
+    console.log(devices);
+    console.dir(devices);
+});
+
 navigator.mediaDevices.getUserMedia(constrains)
 .then(function(stream) {
     video.srcObject = stream; // streamはユーザーのカメラとマイクの情報で、これをvideoの入力ソースにする
