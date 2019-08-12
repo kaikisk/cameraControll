@@ -32,9 +32,15 @@ function gotStream(stream) {
 }
 
 function changeVideo(){
+    if(wubdiw.stream){
+        window.stream.getTracks().forEach(track => {
+            track.stop();
+        });
+    }
+    
     var deviceID = document.getElementById("videoSource").option.value();
     constrains = {video: {deviceId: deviceID}, audio: false};
-    
+
     navigator.mediaDevices.getUserMedia(constrains)
     .then(gotStream).catch(function(err) {
         console.log("An error occured! " + err);
