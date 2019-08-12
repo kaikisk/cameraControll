@@ -19,10 +19,10 @@ navigator.mediaDevices.enumerateDevices()
     }
 });
 
-navigator.mediaDevices.getUserMedia(constrains)
-.then(gotStream).catch(function(err) {
-    console.log("An error occured! " + err);
-});
+// navigator.mediaDevices.getUserMedia(constrains)
+// .then(gotStream).catch(function(err) {
+//     console.log("An error occured! " + err);
+// });
 
 function gotStream(stream) {
     video.srcObject = stream; // streamはユーザーのカメラとマイクの情報で、これをvideoの入力ソースにする
@@ -37,7 +37,7 @@ function changeVideo(){
             track.stop();
         });
     }
-    
+
     var deviceID = document.getElementById("videoSource").option.value();
     constrains = {video: {deviceId: deviceID}, audio: false};
 
