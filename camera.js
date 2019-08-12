@@ -32,6 +32,7 @@ function gotStream(stream) {
 }
 
 function changeVideo(){
+    alert('start change');
     if(stream){
         stream.getVideoTracks().forEach(track => {
             track.stop();
