@@ -1,7 +1,6 @@
 var db;
 var indexedDB = window.indexedDB || window.mozIndexedDB || window.msIndexedDB;
 
-function openIndex(){
     if (indexedDB) {
         // データベースを削除したい場合はコメントを外します。
         //indexedDB.deleteDatabase("mydb");
@@ -20,7 +19,7 @@ function openIndex(){
     } else {
         window.alert("このブラウザではIndexed DataBase API は使えません。");     
     }
-}
+
 
 // function save(){
 //     var keyName = document.getElementById("key").value; // キー名を取ってくる
