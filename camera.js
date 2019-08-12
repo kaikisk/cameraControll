@@ -32,8 +32,8 @@ function gotStream(stream) {
 }
 
 function changeVideo(){
-    if(wubdiw.stream){
-        window.stream.getTracks().forEach(track => {
+    if(video.srcObject){
+        video.srcObject.getVideoTracks().forEach(track => {
             track.stop();
         });
     }
