@@ -18,7 +18,7 @@ function takePhoto() {
         console.log('Photo taken: ' + blob.type + ', ' + blob.size + 'B');
 
         const image = document.querySelector('img');
-        image.src = URL.createObjectURL(blob);
+        // image.src = URL.createObjectURL(blob);
     })
     .catch(err => console.error('takePhoto() failed: ', err));
 }
