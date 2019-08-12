@@ -40,6 +40,7 @@ function changeVideo(){
     alert("change VideoDevice");
 
     var deviceID = document.getElementById("videoSource").option.value();
+    alert(deviceID);
     constrains = {video: {deviceId: deviceID}, audio: false};
 
     navigator.mediaDevices.getUserMedia(constrains)
