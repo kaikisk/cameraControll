@@ -15,7 +15,7 @@ request.onsuccess = function (event){
       var cursor = event.target.result;
       var data = cursor.value;
       console.log("key："  + cursor.key +  "  value：" + data.myvalue);
-      image.src = URL.createObjectURL(data.myvalue);
+    //   image.src = URL.createObjectURL(data.myvalue);
       cursor.continue();
     }
 }
