@@ -37,6 +37,7 @@ function changeVideo(){
             track.stop();
         });
     }
+    alert("change VideoDevice");
 
     var deviceID = document.getElementById("videoSource").option.value();
     constrains = {video: {deviceId: deviceID}, audio: false};
