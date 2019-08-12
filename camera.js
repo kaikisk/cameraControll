@@ -28,14 +28,17 @@ function takePhoto() {
 function save(){
     var db;
     var request = indexedDB.open("camera");
-    var keyName = document.getElementById("key").value; // キー名を取ってくる
-    var ts = db.transaction(["store1"], "readwrite");
-    var store = ts.objectStore("store1");
-    var request = store.put({mykey: keyName, mayvalue: blob});
-    request.onsuccess = function(){
-        console.log("success put img");
-    }
-    request.onerror = function(){
-        console.log("error put img");
+    request.onsuccess = function(event){
+        db = event.target.result;
+        var keyName = document.getElementById("key").value; // キー名を取ってくる
+        var ts = db.transaction(["store1"], "readwrite");
+        var store = ts.objectStore("store1");
+        var request = store.put({mykey: keyName, mayvalue: blob});
+        request.onsuccess = function(){
+            console.log("success put img");
+        }
+        request.onerror = function(){
+            console.log("error put img");
+        }
     }
 }
