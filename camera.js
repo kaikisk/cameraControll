@@ -28,6 +28,7 @@ function gotStream(stream) {
     video.srcObject = stream; // streamはユーザーのカメラとマイクの情報で、これをvideoの入力ソースにする
 
     const track = stream.getVideoTracks()[0];
+    console.log(track);
     imageCapture = new ImageCapture(track);
 
     alert("succsess");
