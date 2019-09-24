@@ -1,23 +1,8 @@
 var imageCapture;
 var tempImage;
 var video = document.getElementById("myVideo"); // 適当にvideoタグのオブジェクトを取得
-var constrains = { video:{facingMode: { exact: "environment" }}, audio: false }; // 映像・音声を取得するかの設定
-
-navigator.mediaDevices.enumerateDevices()
-.then(devices => {
-    var videoSelect = document.getElementById("videoSource");
-    console.log(devices);
-    console.dir(devices);
-    for (let i = 0; i !== devices.length; ++i) {
-        const deviceInfo = devices[i];
-        const option = document.createElement('option');
-        option.value = deviceInfo.deviceId;
-        if (deviceInfo.kind === 'videoinput') {
-            option.text = deviceInfo.label || `camera ${videoSelect.length + 1}`;
-            videoSelect.appendChild(option);
-        }
-    }
-});
+// var constrains = { video:{facingMode: { exact: "environment" }}, audio: false }; // 映像・音声を取得するかの設定
+var constrains = { video: true, audio: false }; // 映像・音声を取得するかの設定
 
 navigator.mediaDevices.getUserMedia(constrains)
 .then(gotStream).catch(function(err) {
