@@ -50,7 +50,7 @@ function gotStream(stream) {
 //     .catch(err => console.error('takePhoto() failed: ', err));
 // }
 
-function take_picture() {
+function takePhoto() {
     //videoのstreamをcanvasに書き出す方法
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
